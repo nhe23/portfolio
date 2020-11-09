@@ -1,12 +1,11 @@
 <script lang="ts">
-
   import { elasticOut, bounceOut } from "svelte/easing";
-import Nav from "./Nav.svelte";
-import Home from "./Home.svelte";
-import About from "./About.svelte";
-import Projects from "./Projects.svelte";
-import Contact from "./Contact.svelte";
-  export let name: string;
+  import Nav from "./Nav.svelte";
+  import Home from "./Home.svelte";
+  import About from "./About.svelte";
+  import Projects from "./Projects.svelte";
+  import Contact from "./Contact.svelte";
+  import Section from "./Section.svelte";
   let visible = false;
 
   function spin(node, { duration }) {
@@ -15,7 +14,7 @@ import Contact from "./Contact.svelte";
       css: (t) => {
         const eased = bounceOut(t);
 
-				return `
+        return `
 				transform: scale(${eased});
 					color: hsl(
 						${~~(t * 360)},
@@ -30,9 +29,17 @@ import Contact from "./Contact.svelte";
 <style>
 </style>
 
-<Nav/>
-<Home/>
-<About/>
-<Projects/>
-<Contact/>
+<Nav />
+<Home />
+<Section id="about" isBlue={false}>
+  <About />
+</Section>
+
+<Section id="projects" isBlue={true}>
+  <Projects />
+</Section>
+
+<Section id="contact" isBlue={false}>
+  <Contact />
+</Section>
 

@@ -1,7 +1,23 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
-  $: svgHeight = window.innerWidth > 600 ? 569 : 569/4*3;
-  $: svgWidth = window.innerWidth > 600 ? 353 : 353/4*3;
+  let windowWidth = window.innerWidth;
+  $: svgWidth =
+  windowWidth > 600
+      ? 569
+      : windowWidth > 450
+      ? (569 / 3) * 2
+      : 569 / 2;
+  $: svgHeight =
+  windowWidth > 600
+      ? 353
+      : windowWidth > 450
+      ? (353 / 3) * 2
+      : 353 / 3;
+
+
+    const handleResize = (e)=>{
+      windowWidth = e.target.innerWidth;
+    }
 </script>
 
 <style>
@@ -42,16 +58,17 @@
   /* } */
 </style>
 
+<svelte:window on:resize={handleResize} />
+
 <section>
   <div in:fade class="description">
     <h1>Nathan Herrmann</h1>
     <h2>Fullstack Web Developer</h2>
-    <h2>{svgHeight}</h2>
   </div>
   <div class="illustrationContainer">
     <svg
-      width="{svgWidth}"
-      height="{svgHeight}"
+      width={svgWidth}
+      height={svgHeight}
       viewBox="0 0 569 353"
       fill="none"
       xmlns="http://www.w3.org/2000/svg">
