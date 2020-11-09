@@ -4,10 +4,14 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    height: 101vh;
+    height: 100vh;
+  }
+
+  #about{
+    margin-top:5px;
   }
 </style>
 
-<section id="about">
-  <div>This is text</div>
+<section>
+  <div id="about">This is text</div>
 </section>

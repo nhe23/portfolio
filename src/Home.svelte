@@ -1,6 +1,9 @@
 <script lang="ts">
-    import { fade } from "svelte/transition";
+  import { fade } from "svelte/transition";
+  $: svgHeight = window.innerWidth > 600 ? 569 : 569/4*3;
+  $: svgWidth = window.innerWidth > 600 ? 353 : 353/4*3;
 </script>
+
 <style>
   section {
     background-color: #1e77fd;
@@ -43,11 +46,12 @@
   <div in:fade class="description">
     <h1>Nathan Herrmann</h1>
     <h2>Fullstack Web Developer</h2>
+    <h2>{svgHeight}</h2>
   </div>
   <div class="illustrationContainer">
     <svg
-      width="569"
-      height="353"
+      width="{svgWidth}"
+      height="{svgHeight}"
       viewBox="0 0 569 353"
       fill="none"
       xmlns="http://www.w3.org/2000/svg">
@@ -203,7 +207,9 @@
             </g>
           </a>
         </g>
-        <a href="https://de.linkedin.com/in/nathan-herrmann-56802b1a1" target="_blank">
+        <a
+          href="https://de.linkedin.com/in/nathan-herrmann-56802b1a1"
+          target="_blank">
           <g id="linkedin">
             <rect
               width="50"

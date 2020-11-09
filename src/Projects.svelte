@@ -6,6 +6,12 @@
     justify-content: space-around;
     height: 101vh;
   }
+
+  #projects{
+    margin-top:5px;
+  }
 </style>
 
-<section id="projects">Projects</section>
+<section>
+  <div id="projects">Projects</div>
+</section>
