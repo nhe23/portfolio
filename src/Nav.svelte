@@ -32,7 +32,7 @@
 </style>
 
 <nav>
-  <div class="logo"><img src="/NHLogo.png" alt="logo" /></div>
+  <div class="logo"><a href="/"><img src="/NHLogo.png" alt="logo" /></a></div>
 
   <div class="links">
     <a href="#about">About</a>

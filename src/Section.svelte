@@ -1,6 +1,7 @@
 <script lang="typescript">
   export let id = "";
   export let isBlue = true;
+
 </script>
 
 <style>

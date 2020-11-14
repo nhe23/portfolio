@@ -2,35 +2,49 @@
   import { elasticOut, bounceOut } from "svelte/easing";
   import Nav from "./Nav.svelte";
   import Home from "./Home.svelte";
-  import About from "./About.svelte";
-  import Projects from "./Projects.svelte";
-  import Contact from "./Contact.svelte";
+  import About from "./Sections/About.svelte";
+  import Projects from "./Sections/Projects.svelte";
+  import Contact from "./Sections/Contact.svelte";
   import Section from "./Section.svelte";
-  let visible = false;
+  import Rocket from "./Rocket.svelte";
 
-  function spin(node, { duration }) {
-    return {
-      duration,
-      css: (t) => {
-        const eased = bounceOut(t);
+  let scrollTop = 0;
 
-        return `
-				transform: scale(${eased});
-					color: hsl(
-						${~~(t * 360)},
-						${Math.min(100, 1000 - 1000 * t)}%,
-						${Math.min(50, 500 - 500 * t)}%
-					);`;
-      },
-    };
-  }
+  const scrollToTop = () => {
+    const scrolling = setInterval(() => {
+      document.documentElement.scrollTop = scrollTop - 100;
+      if (scrollTop === 0) {
+        clearInterval(scrolling);
+      }
+    }, 25);
+  };
+
+  const handleScroll = (e) => {
+    console.log("handleScroll");
+    scrollTop = document.documentElement.scrollTop;
+  };
 </script>
 
 <style>
+  .toTopButton {
+    position: fixed;
+    top: 88%;
+    right: 20px;
+    z-index: 1;
+  }
 </style>
+
+<svelte:window on:scroll={handleScroll} />
 
 <Nav />
 <Home />
+
+{#if scrollTop > 75}
+  <div class="toTopButton" on:click={scrollToTop}>
+    <Rocket />
+  </div>
+{/if}
+
 <Section id="about" isBlue={false}>
   <About />
 </Section>
@@ -42,4 +56,3 @@
 <Section id="contact" isBlue={false}>
   <Contact />
 </Section>
-

@@ -6,12 +6,16 @@
       ? 569
       : windowWidth > 450
       ? (569 / 3) * 2
-      : 569 / 2;
+      :windowWidth > 340
+      ? 569 / 20 *11
+      : 569 / 3;
   $: svgHeight =
   windowWidth > 600
       ? 353
       : windowWidth > 450
       ? (353 / 3) * 2
+      :windowWidth > 340
+      ? 353 / 20 *11
       : 353 / 3;
 
 
