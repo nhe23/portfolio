@@ -2107,7 +2107,7 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file$7 = "src/App.svelte";
 
-    // (38:0) {#if scrollTop > 75}
+    // (43:0) {#if scrollTop > 75}
     function create_if_block(ctx) {
     	let div;
     	let rocket;
@@ -2120,8 +2120,8 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(rocket.$$.fragment);
-    			attr_dev(div, "class", "toTopButton svelte-647pc6");
-    			add_location(div, file$7, 38, 2, 928);
+    			attr_dev(div, "class", "toTopButton svelte-1wfbu7t");
+    			add_location(div, file$7, 43, 2, 1019);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -2155,14 +2155,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(38:0) {#if scrollTop > 75}",
+    		source: "(43:0) {#if scrollTop > 75}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (44:0) <Section id="about" isBlue={false}>
+    // (49:0) <Section id="about" isBlue={false}>
     function create_default_slot_2(ctx) {
     	let about;
     	let current;
@@ -2194,14 +2194,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2.name,
     		type: "slot",
-    		source: "(44:0) <Section id=\\\"about\\\" isBlue={false}>",
+    		source: "(49:0) <Section id=\\\"about\\\" isBlue={false}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (48:0) <Section id="projects" isBlue={true}>
+    // (53:0) <Section id="projects" isBlue={true}>
     function create_default_slot_1(ctx) {
     	let projects;
     	let current;
@@ -2233,14 +2233,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(48:0) <Section id=\\\"projects\\\" isBlue={true}>",
+    		source: "(53:0) <Section id=\\\"projects\\\" isBlue={true}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (52:0) <Section id="contact" isBlue={false}>
+    // (57:0) <Section id="contact" isBlue={false}>
     function create_default_slot(ctx) {
     	let contact;
     	let current;
@@ -2272,7 +2272,7 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(52:0) <Section id=\\\"contact\\\" isBlue={false}>",
+    		source: "(57:0) <Section id=\\\"contact\\\" isBlue={false}>",
     		ctx
     	});
 

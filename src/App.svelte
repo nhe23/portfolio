@@ -32,6 +32,11 @@
     right: 20px;
     z-index: 1;
   }
+  @media only screen and (max-width: 500px) {
+    .toTopButton {
+      top: 80%;
+    }
+  }
 </style>
 
 <svelte:window on:scroll={handleScroll} />
