@@ -2107,7 +2107,7 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file$7 = "src/App.svelte";
 
-    // (43:0) {#if scrollTop > 75}
+    // (43:0) {#if scrollTop > 160}
     function create_if_block(ctx) {
     	let div;
     	let rocket;
@@ -2120,8 +2120,8 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(rocket.$$.fragment);
-    			attr_dev(div, "class", "toTopButton svelte-1wfbu7t");
-    			add_location(div, file$7, 43, 2, 1019);
+    			attr_dev(div, "class", "toTopButton svelte-1btn6sb");
+    			add_location(div, file$7, 43, 2, 1020);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -2155,7 +2155,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(43:0) {#if scrollTop > 75}",
+    		source: "(43:0) {#if scrollTop > 160}",
     		ctx
     	});
 
@@ -2295,7 +2295,7 @@ var app = (function () {
     	let dispose;
     	nav = new Nav({ $$inline: true });
     	home = new Home({ $$inline: true });
-    	let if_block = /*scrollTop*/ ctx[0] > 75 && create_if_block(ctx);
+    	let if_block = /*scrollTop*/ ctx[0] > 160 && create_if_block(ctx);
 
     	section0 = new Section({
     			props: {
@@ -2364,7 +2364,7 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (/*scrollTop*/ ctx[0] > 75) {
+    			if (/*scrollTop*/ ctx[0] > 160) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
 

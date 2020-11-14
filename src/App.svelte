@@ -34,7 +34,7 @@
   }
   @media only screen and (max-width: 500px) {
     .toTopButton {
-      top: 80%;
+      top: 82%;
     }
   }
 </style>
@@ -44,7 +44,7 @@
 <Nav />
 <Home />
 
-{#if scrollTop > 75}
+{#if scrollTop > 160}
   <div class="toTopButton" on:click={scrollToTop}>
     <Rocket />
   </div>
