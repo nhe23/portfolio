@@ -56,6 +56,9 @@
     font-size: 50px;
   }
 
+  h2 {
+    font-size: 35px;
+  }
   .outstanding {
     transition: all 1s ease;
   }
@@ -66,14 +69,38 @@
       0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
       0 20px 20px rgba(0, 0, 0, 0.15); */
     /* text-shadow: -4px 4px 0px #00e6e6, -8px 8px 0px #01cccc, */
-      /* -12px 12px 0px #00bdbd; */
-      text-shadow: -4px 4px 0px #92b9f5, -8px 8px 0px #619bf1,
+    /* -12px 12px 0px #00bdbd; */
+    text-shadow: -4px 4px 0px #92b9f5, -8px 8px 0px #619bf1,
       -12px 12px 0px #4e8ff1;
     transform: translate(20px, 0px) scale(1.1);
+  }
+
+  @media only screen and (max-width: 720px) {
+    .outstanding {
+      text-shadow: -4px 4px 0px #92b9f5, -8px 8px 0px #619bf1,
+        -12px 12px 0px #4e8ff1;
+      transform: translate(10px, 0px) scale(1.1);
+    }
   }
   /* .illustration{
     height:fit-content */
   /* } */
+
+  .primaryButton{
+    background-color: #FF6584;
+    color: #ffffff;
+    border-radius: 20px;
+    padding:5px 25px;
+    width: fit-content;
+    margin-top: 20px;
+    align-self: center;
+  }
+
+  a,
+  a:hover,
+  a:visited{
+    text-decoration: none;
+  }
 </style>
 
 <svelte:window on:resize={handleResize} />
@@ -82,7 +109,9 @@
   <div in:fade class="description">
     <h1>Build</h1>
     <h1 class="outstanding">outstanding</h1>
-    <h1>Web Applications</h1>
+    <h2>Web Applications</h2>
+    <a href="#contact"><div class="primaryButton">Let's create</div></a>
+    
   </div>
   <div class="illustrationContainer">
     <svg
