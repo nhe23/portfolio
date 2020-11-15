@@ -2,26 +2,25 @@
   import { fade } from "svelte/transition";
   let windowWidth = window.innerWidth;
   $: svgWidth =
-  windowWidth > 600
+    windowWidth > 600
       ? 569
       : windowWidth > 450
       ? (569 / 3) * 2
-      :windowWidth > 340
-      ? 569 / 20 *11
+      : windowWidth > 340
+      ? (569 / 20) * 11
       : 569 / 3;
   $: svgHeight =
-  windowWidth > 600
+    windowWidth > 600
       ? 353
       : windowWidth > 450
       ? (353 / 3) * 2
-      :windowWidth > 340
-      ? 353 / 20 *11
+      : windowWidth > 340
+      ? (353 / 20) * 11
       : 353 / 3;
 
-
-    const handleResize = (e)=>{
-      windowWidth = e.target.innerWidth;
-    }
+  const handleResize = (e) => {
+    windowWidth = e.target.innerWidth;
+  };
 </script>
 
 <style>
@@ -57,6 +56,21 @@
     font-size: 50px;
   }
 
+  .outstanding {
+    transition: all 1s ease;
+  }
+  .outstanding:hover {
+    /* text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+      0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+      0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+      0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+      0 20px 20px rgba(0, 0, 0, 0.15); */
+    /* text-shadow: -4px 4px 0px #00e6e6, -8px 8px 0px #01cccc, */
+      /* -12px 12px 0px #00bdbd; */
+      text-shadow: -4px 4px 0px #92b9f5, -8px 8px 0px #619bf1,
+      -12px 12px 0px #4e8ff1;
+    transform: translate(20px, 0px) scale(1.1);
+  }
   /* .illustration{
     height:fit-content */
   /* } */
@@ -66,8 +80,9 @@
 
 <section>
   <div in:fade class="description">
-    <h1>Nathan Herrmann</h1>
-    <h2>Fullstack Web Developer</h2>
+    <h1>Build</h1>
+    <h1 class="outstanding">outstanding</h1>
+    <h1>Web Applications</h1>
   </div>
   <div class="illustrationContainer">
     <svg
