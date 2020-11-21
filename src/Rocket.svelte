@@ -17,7 +17,7 @@
 
   .pulsatingFlame {
     animation: pulsating 1s ease infinite;
-    z-index: 4;
+    z-index: 3;
   }
 
   @keyframes pulsating {
@@ -31,7 +31,7 @@
       transform: translateY(-15px);
     }
     80%{
-      transform: translateY(-35px);
+      transform: translateY(-5px);
     }
   }
 

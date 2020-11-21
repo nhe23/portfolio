@@ -37,12 +37,20 @@
       top: 82%;
     }
   }
+
+  .home{
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+  }
 </style>
 
 <svelte:window on:scroll={handleScroll} />
 
-<Nav />
-<Home />
+<div class="home">
+  <Nav />
+  <Home />
+</div>
 
 {#if scrollTop > 160}
   <div class="toTopButton" on:click={scrollToTop}>
