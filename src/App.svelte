@@ -2,7 +2,7 @@
   import { elasticOut, bounceOut } from "svelte/easing";
   import Nav from "./Nav.svelte";
   import Home from "./Home.svelte";
-  import About from "./Sections/About.svelte";
+  import About from "./Sections/About/About.svelte";
   import Projects from "./Sections/Projects.svelte";
   import Contact from "./Sections/Contact.svelte";
   import Section from "./Section.svelte";

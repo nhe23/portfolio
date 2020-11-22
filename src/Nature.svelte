@@ -1,18 +1,103 @@
 <script lang="ts">
-  export let sizeFactor=1;
-  const height = 246 *sizeFactor;
-  const width = 259 *sizeFactor;
+  export let sizeFactor = 1;
+  const height = 246 * sizeFactor;
+  const width = 259 * sizeFactor;
 </script>
 
-<style></style>
+<style>
+  #Bird1 {
+    animation: bird1 6s linear infinite;
+    /* transform-origin: top 10px; */
+  }
+
+  @keyframes bird1 {
+    from {
+      transform: rotate(0deg) translateX(10px) rotate(0deg);
+      /* transform-origin: top 10px; */
+    }
+    to {
+      transform: rotate(360deg) translateX(10px) rotate(-360deg);
+      /* transform-origin: top 10px; */
+    }
+  }
+
+  #Bird2 {
+    animation: bird2Circle 9s linear infinite;
+  }
+
+  @keyframes bird2Circle {
+    0% {
+      -webkit-transform: rotate(0deg) translateX(15px) translateY(5px)
+        rotate(0deg);
+    }
+    25% {
+      -webkit-transform: rotate(90deg) translateX(15px) translateY(5px)
+        rotate(-90deg);
+    }
+    50% {
+      -webkit-transform: rotate(180deg) translateX(15px) translateY(5px)
+        rotate(-180deg);
+    }
+    75% {
+      -webkit-transform: rotate(270deg) translateX(15px) translateY(5px)
+        rotate(-270deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg) translateX(15px) translateY(5px)
+        rotate(-360deg);
+    }
+  }
+
+  #Bird3 {
+    animation: bird3 9s linear infinite;
+  }
+
+  @keyframes bird3 {
+    0% {
+      -webkit-transform: rotate(0deg) translateX(20px) translateY(5px)
+        rotate(0deg);
+    }
+    25% {
+      -webkit-transform: rotate(-90deg) translateX(20px) translateY(5px)
+        rotate(90deg);
+    }
+    50% {
+      -webkit-transform: rotate(-180deg) translateX(20px) translateY(5px)
+        rotate(180deg);
+    }
+    75% {
+      -webkit-transform: rotate(-270deg) translateX(20px) translateY(5px)
+        rotate(270deg);
+    }
+    100% {
+      -webkit-transform: rotate(-360deg) translateX(20px) translateY(5px)
+        rotate(360deg);
+    }
+  }
+
+  /* @keyframes bird1 {
+    20% {
+      transform: translate(10px, -5px);
+    }
+    40% {
+      transform: translate(-10px, -5px);
+    }
+    60% {
+      transform: translate(-10px, 5px);
+    }
+    80% {
+      transform: translate(10px, 5px);
+    }
+  } */
+</style>
 
 <svg
-  width="{height}"
-  height="{width}"
+  width={height}
+  height={width}
   viewBox="0 0 259 246"
   fill="none"
   xmlns="http://www.w3.org/2000/svg">
-  <g id="undraw_nature_m5ll 1" >
+  <g id="undraw_nature_m5ll 1">
     <path
       id="Sun"
       d="M181.511 107.718C197.076 107.718 209.694 96.6322 209.694 82.9567C209.694 69.2812 197.076 58.1951 181.511 58.1951C165.946 58.1951 153.328 69.2812 153.328 82.9567C153.328 96.6322 165.946 107.718 181.511 107.718Z"
