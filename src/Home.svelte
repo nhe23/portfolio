@@ -3,22 +3,14 @@
   import Nature from "./Nature.svelte";
   let h = 0;
   let w = 0;
-  // let windowWidth = window.innerWidth;
-  // let windowHeight = window.innerHeight;
   $: triangleWidth = w / 2;
   $: triangleHeight = h;
-  // const handleResize = (e) => {
-  //   windowWidth = e.target.innerWidth;
-  //   windowHeight = document.getElementById("sectionContainer").clientHeight;
-  // };
 </script>
 
 <style>
   .sectionContainer {
     background-color: #1e77fd;
-    height: 100%;
-    /* position: absolute; */
-    /* z-index: 2; */
+    flex:1;
   }
   section {
     display: flex;

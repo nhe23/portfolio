@@ -689,26 +689,26 @@ var app = (function () {
     			a3.textContent = "Contact";
     			if (img.src !== (img_src_value = "/NHLogo.png")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "logo");
-    			attr_dev(img, "class", "svelte-1tj9c10");
-    			add_location(img, file, 36, 32, 521);
+    			attr_dev(img, "class", "svelte-1fpovr8");
+    			add_location(img, file, 36, 32, 515);
     			attr_dev(a0, "href", "/");
-    			attr_dev(a0, "class", "svelte-1tj9c10");
-    			add_location(a0, file, 36, 20, 509);
-    			attr_dev(div0, "class", "logo svelte-1tj9c10");
-    			add_location(div0, file, 36, 2, 491);
+    			attr_dev(a0, "class", "svelte-1fpovr8");
+    			add_location(a0, file, 36, 20, 503);
+    			attr_dev(div0, "class", "logo svelte-1fpovr8");
+    			add_location(div0, file, 36, 2, 485);
     			attr_dev(a1, "href", "#about");
-    			attr_dev(a1, "class", "svelte-1tj9c10");
-    			add_location(a1, file, 39, 4, 595);
+    			attr_dev(a1, "class", "svelte-1fpovr8");
+    			add_location(a1, file, 39, 4, 589);
     			attr_dev(a2, "href", "#projects");
-    			attr_dev(a2, "class", "svelte-1tj9c10");
-    			add_location(a2, file, 40, 4, 626);
+    			attr_dev(a2, "class", "svelte-1fpovr8");
+    			add_location(a2, file, 40, 4, 620);
     			attr_dev(a3, "href", "#contact");
-    			attr_dev(a3, "class", "svelte-1tj9c10");
-    			add_location(a3, file, 41, 4, 663);
-    			attr_dev(div1, "class", "links svelte-1tj9c10");
-    			add_location(div1, file, 38, 2, 571);
-    			attr_dev(nav, "class", "svelte-1tj9c10");
-    			add_location(nav, file, 35, 0, 483);
+    			attr_dev(a3, "class", "svelte-1fpovr8");
+    			add_location(a3, file, 41, 4, 657);
+    			attr_dev(div1, "class", "links svelte-1fpovr8");
+    			add_location(div1, file, 38, 2, 565);
+    			attr_dev(nav, "class", "svelte-1fpovr8");
+    			add_location(nav, file, 35, 0, 477);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1123,37 +1123,37 @@ var app = (function () {
     			button.textContent = "Let's create";
     			attr_dev(path, "d", path_d_value = "M0 0L" + /*triangleWidth*/ ctx[2] + " " + /*triangleHeight*/ ctx[3] + "H0V0Z");
     			attr_dev(path, "fill", "#1A64D4");
-    			add_location(path, file$2, 127, 6, 2851);
+    			add_location(path, file$2, 119, 6, 2554);
     			attr_dev(svg, "id", "triangle");
     			attr_dev(svg, "width", /*triangleWidth*/ ctx[2]);
     			attr_dev(svg, "height", /*triangleHeight*/ ctx[3]);
     			attr_dev(svg, "viewBox", svg_viewBox_value = "0 0 " + /*triangleWidth*/ ctx[2] + " " + /*triangleHeight*/ ctx[3]);
     			attr_dev(svg, "fill", "none");
     			attr_dev(svg, "xmlns", "http://www.w3.org/2000/svg");
-    			attr_dev(svg, "class", "svelte-1t7x07u");
-    			add_location(svg, file$2, 120, 4, 2649);
-    			attr_dev(div0, "class", "illustrationContainer svelte-1t7x07u");
-    			add_location(div0, file$2, 129, 4, 2937);
-    			attr_dev(div1, "class", "illustration svelte-1t7x07u");
-    			add_location(div1, file$2, 119, 2, 2618);
-    			attr_dev(h10, "class", "svelte-1t7x07u");
-    			add_location(h10, file$2, 136, 6, 3085);
-    			attr_dev(h11, "class", "outstanding svelte-1t7x07u");
-    			add_location(h11, file$2, 137, 6, 3106);
-    			attr_dev(h2, "class", "svelte-1t7x07u");
-    			add_location(h2, file$2, 138, 6, 3153);
-    			attr_dev(button, "class", "primaryButton svelte-1t7x07u");
-    			add_location(button, file$2, 139, 25, 3204);
+    			attr_dev(svg, "class", "svelte-1um117o");
+    			add_location(svg, file$2, 112, 4, 2352);
+    			attr_dev(div0, "class", "illustrationContainer svelte-1um117o");
+    			add_location(div0, file$2, 121, 4, 2640);
+    			attr_dev(div1, "class", "illustration svelte-1um117o");
+    			add_location(div1, file$2, 111, 2, 2321);
+    			attr_dev(h10, "class", "svelte-1um117o");
+    			add_location(h10, file$2, 128, 6, 2788);
+    			attr_dev(h11, "class", "outstanding svelte-1um117o");
+    			add_location(h11, file$2, 129, 6, 2809);
+    			attr_dev(h2, "class", "svelte-1um117o");
+    			add_location(h2, file$2, 130, 6, 2856);
+    			attr_dev(button, "class", "primaryButton svelte-1um117o");
+    			add_location(button, file$2, 131, 25, 2907);
     			attr_dev(a, "href", "#contact");
-    			attr_dev(a, "class", "svelte-1t7x07u");
-    			add_location(a, file$2, 139, 6, 3185);
-    			attr_dev(div2, "class", "description svelte-1t7x07u");
-    			add_location(div2, file$2, 135, 4, 3045);
-    			attr_dev(section, "class", "svelte-1t7x07u");
-    			add_location(section, file$2, 134, 2, 3031);
-    			attr_dev(div3, "class", "sectionContainer svelte-1t7x07u");
+    			attr_dev(a, "class", "svelte-1um117o");
+    			add_location(a, file$2, 131, 6, 2888);
+    			attr_dev(div2, "class", "description svelte-1um117o");
+    			add_location(div2, file$2, 127, 4, 2748);
+    			attr_dev(section, "class", "svelte-1um117o");
+    			add_location(section, file$2, 126, 2, 2734);
+    			attr_dev(div3, "class", "sectionContainer svelte-1um117o");
     			add_render_callback(() => /*div3_elementresize_handler*/ ctx[4].call(div3));
-    			add_location(div3, file$2, 118, 0, 2542);
+    			add_location(div3, file$2, 110, 0, 2245);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1275,8 +1275,6 @@ var app = (function () {
 
     	$$self.$$.update = () => {
     		if ($$self.$$.dirty & /*w*/ 2) {
-    			// let windowWidth = window.innerWidth;
-    			// let windowHeight = window.innerHeight;
     			 $$invalidate(2, triangleWidth = w / 2);
     		}
 
@@ -2728,7 +2726,7 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file$8 = "src/App.svelte";
 
-    // (51:0) {#if scrollTop > 160}
+    // (52:0) {#if scrollTop > 160}
     function create_if_block(ctx) {
     	let div;
     	let rocket;
@@ -2741,8 +2739,8 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			create_component(rocket.$$.fragment);
-    			attr_dev(div, "class", "toTopButton svelte-ple1lf");
-    			add_location(div, file$8, 51, 2, 1129);
+    			attr_dev(div, "class", "toTopButton svelte-10nuyk9");
+    			add_location(div, file$8, 52, 2, 1157);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -2776,14 +2774,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(51:0) {#if scrollTop > 160}",
+    		source: "(52:0) {#if scrollTop > 160}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (57:0) <Section id="about" isBlue={false}>
+    // (58:0) <Section id="about" isBlue={false}>
     function create_default_slot_2(ctx) {
     	let about;
     	let current;
@@ -2815,14 +2813,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2.name,
     		type: "slot",
-    		source: "(57:0) <Section id=\\\"about\\\" isBlue={false}>",
+    		source: "(58:0) <Section id=\\\"about\\\" isBlue={false}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (61:0) <Section id="projects" isBlue={true}>
+    // (62:0) <Section id="projects" isBlue={true}>
     function create_default_slot_1(ctx) {
     	let projects;
     	let current;
@@ -2854,14 +2852,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(61:0) <Section id=\\\"projects\\\" isBlue={true}>",
+    		source: "(62:0) <Section id=\\\"projects\\\" isBlue={true}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (65:0) <Section id="contact" isBlue={false}>
+    // (66:0) <Section id="contact" isBlue={false}>
     function create_default_slot(ctx) {
     	let contact;
     	let current;
@@ -2893,7 +2891,7 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(65:0) <Section id=\\\"contact\\\" isBlue={false}>",
+    		source: "(66:0) <Section id=\\\"contact\\\" isBlue={false}>",
     		ctx
     	});
 
@@ -2963,8 +2961,8 @@ var app = (function () {
     			create_component(section1.$$.fragment);
     			t4 = space();
     			create_component(section2.$$.fragment);
-    			attr_dev(div, "class", "home svelte-ple1lf");
-    			add_location(div, file$8, 45, 0, 1057);
+    			attr_dev(div, "class", "home svelte-10nuyk9");
+    			add_location(div, file$8, 46, 0, 1085);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

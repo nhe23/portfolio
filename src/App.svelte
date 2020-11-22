@@ -28,13 +28,14 @@
 <style>
   .toTopButton {
     position: fixed;
-    top: 88%;
+    bottom:  15px;
     right: 20px;
     z-index: 1;
   }
   @media only screen and (max-width: 500px) {
     .toTopButton {
-      top: 82%;
+      right: 10px;
+      bottom: 20px;
     }
   }
 

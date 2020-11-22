@@ -1,8 +1,8 @@
 <style>
   nav {
     height: 10vh;
-    /* max-height: 80px;
-    min-height: 60px; */
+    max-height: 80px;
+    min-height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
