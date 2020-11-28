@@ -1,4 +1,6 @@
 <script>
+    import {slide} from 'svelte/transition';
+
   export let showMobile = false;
 </script>
 
@@ -30,7 +32,7 @@
   }
 </style>
 
-<div class:links={!showMobile} class:mobile={showMobile}>
+<div transition:slide={{duration:showMobile?750:0}} class:links={!showMobile} class:mobile={showMobile}>
   <a href="#about">About</a>
   <a href="#projects">Projects</a>
   <a href="#contact">Contact</a>

@@ -463,6 +463,111 @@ var app = (function () {
             }
         };
     }
+    function create_bidirectional_transition(node, fn, params, intro) {
+        let config = fn(node, params);
+        let t = intro ? 0 : 1;
+        let running_program = null;
+        let pending_program = null;
+        let animation_name = null;
+        function clear_animation() {
+            if (animation_name)
+                delete_rule(node, animation_name);
+        }
+        function init(program, duration) {
+            const d = program.b - t;
+            duration *= Math.abs(d);
+            return {
+                a: t,
+                b: program.b,
+                d,
+                duration,
+                start: program.start,
+                end: program.start + duration,
+                group: program.group
+            };
+        }
+        function go(b) {
+            const { delay = 0, duration = 300, easing = identity, tick = noop, css } = config || null_transition;
+            const program = {
+                start: now() + delay,
+                b
+            };
+            if (!b) {
+                // @ts-ignore todo: improve typings
+                program.group = outros;
+                outros.r += 1;
+            }
+            if (running_program || pending_program) {
+                pending_program = program;
+            }
+            else {
+                // if this is an intro, and there's a delay, we need to do
+                // an initial tick and/or apply CSS animation immediately
+                if (css) {
+                    clear_animation();
+                    animation_name = create_rule(node, t, b, duration, delay, easing, css);
+                }
+                if (b)
+                    tick(0, 1);
+                running_program = init(program, duration);
+                add_render_callback(() => dispatch(node, b, 'start'));
+                loop(now => {
+                    if (pending_program && now > pending_program.start) {
+                        running_program = init(pending_program, duration);
+                        pending_program = null;
+                        dispatch(node, running_program.b, 'start');
+                        if (css) {
+                            clear_animation();
+                            animation_name = create_rule(node, t, running_program.b, running_program.duration, 0, easing, config.css);
+                        }
+                    }
+                    if (running_program) {
+                        if (now >= running_program.end) {
+                            tick(t = running_program.b, 1 - t);
+                            dispatch(node, running_program.b, 'end');
+                            if (!pending_program) {
+                                // we're done
+                                if (running_program.b) {
+                                    // intro — we can tidy up immediately
+                                    clear_animation();
+                                }
+                                else {
+                                    // outro — needs to be coordinated
+                                    if (!--running_program.group.r)
+                                        run_all(running_program.group.c);
+                                }
+                            }
+                            running_program = null;
+                        }
+                        else if (now >= running_program.start) {
+                            const p = now - running_program.start;
+                            t = running_program.a + running_program.d * easing(p / running_program.duration);
+                            tick(t, 1 - t);
+                        }
+                    }
+                    return !!(running_program || pending_program);
+                });
+            }
+        }
+        return {
+            run(b) {
+                if (is_function(config)) {
+                    wait().then(() => {
+                        // @ts-ignore
+                        config = config();
+                        go(b);
+                    });
+                }
+                else {
+                    go(b);
+                }
+            },
+            end() {
+                clear_animation();
+                running_program = pending_program = null;
+            }
+        };
+    }
 
     const globals = (typeof window !== 'undefined'
         ? window
@@ -680,6 +785,10 @@ var app = (function () {
                 : t < c
                     ? ca * t2 - cb * t + cc
                     : 10.8 * t * t - 20.52 * t + 10.72;
+    }
+    function cubicOut(t) {
+        const f = t - 1.0;
+        return f * f * f + 1.0;
     }
     function elasticOut(t) {
         return (Math.sin((-13.0 * (t + 1.0) * Math.PI) / 2) * Math.pow(2.0, -10.0 * t) + 1.0);
@@ -1061,8 +1170,42 @@ var app = (function () {
     	}
     }
 
-    /* src/Nav/Links.svelte generated by Svelte v3.29.4 */
+    function fade(node, { delay = 0, duration = 400, easing = identity }) {
+        const o = +getComputedStyle(node).opacity;
+        return {
+            delay,
+            duration,
+            easing,
+            css: t => `opacity: ${t * o}`
+        };
+    }
+    function slide(node, { delay = 0, duration = 400, easing = cubicOut }) {
+        const style = getComputedStyle(node);
+        const opacity = +style.opacity;
+        const height = parseFloat(style.height);
+        const padding_top = parseFloat(style.paddingTop);
+        const padding_bottom = parseFloat(style.paddingBottom);
+        const margin_top = parseFloat(style.marginTop);
+        const margin_bottom = parseFloat(style.marginBottom);
+        const border_top_width = parseFloat(style.borderTopWidth);
+        const border_bottom_width = parseFloat(style.borderBottomWidth);
+        return {
+            delay,
+            duration,
+            easing,
+            css: t => 'overflow: hidden;' +
+                `opacity: ${Math.min(t * 20, 1) * opacity};` +
+                `height: ${t * height}px;` +
+                `padding-top: ${t * padding_top}px;` +
+                `padding-bottom: ${t * padding_bottom}px;` +
+                `margin-top: ${t * margin_top}px;` +
+                `margin-bottom: ${t * margin_bottom}px;` +
+                `border-top-width: ${t * border_top_width}px;` +
+                `border-bottom-width: ${t * border_bottom_width}px;`
+        };
+    }
 
+    /* src/Nav/Links.svelte generated by Svelte v3.29.4 */
     const file$1 = "src/Nav/Links.svelte";
 
     function create_fragment$2(ctx) {
@@ -1072,6 +1215,8 @@ var app = (function () {
     	let a1;
     	let t3;
     	let a2;
+    	let div_transition;
+    	let current;
 
     	const block = {
     		c: function create() {
@@ -1086,17 +1231,17 @@ var app = (function () {
     			a2.textContent = "Contact";
     			attr_dev(a0, "href", "#about");
     			attr_dev(a0, "class", "svelte-18zkxir");
-    			add_location(a0, file$1, 33, 2, 533);
+    			add_location(a0, file$1, 35, 2, 626);
     			attr_dev(a1, "href", "#projects");
     			attr_dev(a1, "class", "svelte-18zkxir");
-    			add_location(a1, file$1, 34, 2, 562);
+    			add_location(a1, file$1, 36, 2, 655);
     			attr_dev(a2, "href", "#contact");
     			attr_dev(a2, "class", "svelte-18zkxir");
-    			add_location(a2, file$1, 35, 2, 597);
+    			add_location(a2, file$1, 37, 2, 690);
     			attr_dev(div, "class", "svelte-18zkxir");
     			toggle_class(div, "links", !/*showMobile*/ ctx[0]);
     			toggle_class(div, "mobile", /*showMobile*/ ctx[0]);
-    			add_location(div, file$1, 32, 0, 473);
+    			add_location(div, file$1, 34, 0, 519);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1108,8 +1253,11 @@ var app = (function () {
     			append_dev(div, a1);
     			append_dev(div, t3);
     			append_dev(div, a2);
+    			current = true;
     		},
-    		p: function update(ctx, [dirty]) {
+    		p: function update(new_ctx, [dirty]) {
+    			ctx = new_ctx;
+
     			if (dirty & /*showMobile*/ 1) {
     				toggle_class(div, "links", !/*showMobile*/ ctx[0]);
     			}
@@ -1118,10 +1266,40 @@ var app = (function () {
     				toggle_class(div, "mobile", /*showMobile*/ ctx[0]);
     			}
     		},
-    		i: noop,
-    		o: noop,
+    		i: function intro(local) {
+    			if (current) return;
+
+    			add_render_callback(() => {
+    				if (!div_transition) div_transition = create_bidirectional_transition(
+    					div,
+    					slide,
+    					{
+    						duration: /*showMobile*/ ctx[0] ? 750 : 0
+    					},
+    					true
+    				);
+
+    				div_transition.run(1);
+    			});
+
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			if (!div_transition) div_transition = create_bidirectional_transition(
+    				div,
+    				slide,
+    				{
+    					duration: /*showMobile*/ ctx[0] ? 750 : 0
+    				},
+    				false
+    			);
+
+    			div_transition.run(0);
+    			current = false;
+    		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
+    			if (detaching && div_transition) div_transition.end();
     		}
     	};
 
@@ -1150,7 +1328,7 @@ var app = (function () {
     		if ("showMobile" in $$props) $$invalidate(0, showMobile = $$props.showMobile);
     	};
 
-    	$$self.$capture_state = () => ({ showMobile });
+    	$$self.$capture_state = () => ({ slide, showMobile });
 
     	$$self.$inject_state = $$props => {
     		if ("showMobile" in $$props) $$invalidate(0, showMobile = $$props.showMobile);
@@ -1523,16 +1701,6 @@ var app = (function () {
     			id: create_fragment$3.name
     		});
     	}
-    }
-
-    function fade(node, { delay = 0, duration = 400, easing = identity }) {
-        const o = +getComputedStyle(node).opacity;
-        return {
-            delay,
-            duration,
-            easing,
-            css: t => `opacity: ${t * o}`
-        };
     }
 
     /* src/IllustrationComponents/Nature.svelte generated by Svelte v3.29.4 */
