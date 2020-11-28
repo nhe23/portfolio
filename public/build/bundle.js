@@ -4120,25 +4120,76 @@ var app = (function () {
     const file$b = "src/Sections/Contact.svelte";
 
     function create_fragment$c(ctx) {
-    	let span;
+    	let form;
+    	let p0;
+    	let label0;
+    	let t0;
+    	let input0;
+    	let t1;
+    	let p1;
+    	let label1;
+    	let t2;
+    	let input1;
+    	let t3;
+    	let p2;
+    	let button;
 
     	const block = {
     		c: function create() {
-    			span = element("span");
-    			span.textContent = "Contact";
-    			add_location(span, file$b, 3, 0, 18);
+    			form = element("form");
+    			p0 = element("p");
+    			label0 = element("label");
+    			t0 = text("Name ");
+    			input0 = element("input");
+    			t1 = space();
+    			p1 = element("p");
+    			label1 = element("label");
+    			t2 = text("Email ");
+    			input1 = element("input");
+    			t3 = space();
+    			p2 = element("p");
+    			button = element("button");
+    			button.textContent = "Send";
+    			attr_dev(input0, "type", "text");
+    			attr_dev(input0, "name", "name");
+    			add_location(input0, file$b, 5, 16, 70);
+    			add_location(label0, file$b, 5, 4, 58);
+    			add_location(p0, file$b, 4, 2, 50);
+    			attr_dev(input1, "type", "email");
+    			attr_dev(input1, "name", "email");
+    			add_location(input1, file$b, 8, 17, 142);
+    			add_location(label1, file$b, 8, 4, 129);
+    			add_location(p1, file$b, 7, 2, 121);
+    			attr_dev(button, "type", "submit");
+    			add_location(button, file$b, 11, 4, 203);
+    			add_location(p2, file$b, 10, 2, 195);
+    			attr_dev(form, "name", "contact");
+    			attr_dev(form, "netlify", "");
+    			add_location(form, file$b, 3, 0, 18);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, span, anchor);
+    			insert_dev(target, form, anchor);
+    			append_dev(form, p0);
+    			append_dev(p0, label0);
+    			append_dev(label0, t0);
+    			append_dev(label0, input0);
+    			append_dev(form, t1);
+    			append_dev(form, p1);
+    			append_dev(p1, label1);
+    			append_dev(label1, t2);
+    			append_dev(label1, input1);
+    			append_dev(form, t3);
+    			append_dev(form, p2);
+    			append_dev(p2, button);
     		},
     		p: noop,
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(span);
+    			if (detaching) detach_dev(form);
     		}
     	};
 
