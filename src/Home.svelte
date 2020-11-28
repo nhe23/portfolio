@@ -1,6 +1,6 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
-  import Nature from "./Nature.svelte";
+  import Nature from "./IllustrationComponents/Nature.svelte";
   let h = 0;
   let w = 0;
   $: triangleWidth = w / 2;
@@ -9,7 +9,7 @@
 
 <style>
   .sectionContainer {
-    background-color: #1e77fd;
+    background-color: var(--theme-primary);
     flex:1;
   }
   section {
@@ -24,7 +24,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: #ffff;
+    color: var(--theme-background);
     z-index: 2;
   }
   @media only screen and (min-width: 720px) {
@@ -73,8 +73,8 @@
   /* } */
 
   .primaryButton {
-    background-color: #ff6584;
-    color: #ffffff;
+    background-color: var(--theme-secondary);
+    color: var(--theme-textColorPrimary);
     border-radius: 20px;
     padding: 5px 35px;
     width: fit-content;

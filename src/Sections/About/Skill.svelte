@@ -23,7 +23,7 @@ export let text;
 
   .header {
     margin: 20px;
-    color: #1e77fd;
+    color: var(--theme-primary);
     font-size: 21px;
   }
   .illustrationContainer{

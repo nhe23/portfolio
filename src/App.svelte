@@ -1,12 +1,13 @@
 <script lang="ts">
   import { elasticOut, bounceOut } from "svelte/easing";
-  import Nav from "./Nav.svelte";
+  import ThemeContext from "./Theming/ThemeContext.svelte";
+  import Nav from "./Nav/Nav.svelte";
   import Home from "./Home.svelte";
   import About from "./Sections/About/About.svelte";
   import Projects from "./Sections/Projects.svelte";
   import Contact from "./Sections/Contact.svelte";
   import Section from "./Section.svelte";
-  import Rocket from "./Rocket.svelte";
+  import Rocket from "./IllustrationComponents/Rocket.svelte";
 
   let scrollTop = 0;
 
@@ -28,7 +29,7 @@
 <style>
   .toTopButton {
     position: fixed;
-    bottom:  15px;
+    bottom: 15px;
     right: 20px;
     z-index: 1;
   }
@@ -39,8 +40,8 @@
     }
   }
 
-  .home{
-    height:100vh;
+  .home {
+    height: 100vh;
     display: flex;
     flex-direction: column;
   }
@@ -48,25 +49,27 @@
 
 <svelte:window on:scroll={handleScroll} />
 
-<div class="home">
-  <Nav />
-  <Home />
-</div>
-
-{#if scrollTop > 160}
-  <div class="toTopButton" on:click={scrollToTop}>
-    <Rocket />
+<ThemeContext>
+  <div class="home">
+    <Nav />
+    <Home />
   </div>
-{/if}
 
-<Section id="about" isBlue={false}>
-  <About />
-</Section>
+  {#if scrollTop > 160}
+    <div class="toTopButton" on:click={scrollToTop}>
+      <Rocket />
+    </div>
+  {/if}
 
-<Section id="projects" isBlue={true}>
-  <Projects />
-</Section>
+  <Section id="about" isBlue={false}>
+    <About />
+  </Section>
 
-<Section id="contact" isBlue={false}>
-  <Contact />
-</Section>
+  <Section id="projects" isBlue={true}>
+    <Projects />
+  </Section>
+
+  <Section id="contact" isBlue={false}>
+    <Contact />
+  </Section>
+</ThemeContext>
