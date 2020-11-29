@@ -44,7 +44,7 @@
     /* color: var(--theme-textColorPrimary); */
   }
 
-  textarea{
+  textarea {
     /* border-color: var(--theme-textColorPrimary); */
   }
 
@@ -60,10 +60,10 @@
       <input type="hidden" name="form-name" value="contact" />
       <p style="display: none">
         <label>Don’t fill this out if you're human:
-          <input name="bot-field" /></label>
+          <input name="bot-field"/></label>
       </p>
-      <input name="Name" placeholder="Name" />
-      <input name="Email" placeholder="Email" />
+      <input type="text" name="Name" placeholder="Name" />
+      <input type="email" name="Email" placeholder="Email" />
       <textarea name="Message" placeholder="Message" rows="10" />
       <button type="submit">Send</button>
     </form>
