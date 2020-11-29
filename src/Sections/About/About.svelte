@@ -21,7 +21,7 @@
     align-items: center;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    background-color: rgb(232, 238, 243);
+    background-color:var(--theme-light);
   }
 
   @media only screen and (max-width: 720px) {
@@ -65,7 +65,7 @@
       <img class="profilePicture" src="./profile_picture.jpg" alt="Profile" />
     </div>
 
-    <h1>Hi, I`m Nathan.</h1>
+    <h1>Hi, I'm Nathan.</h1>
     <h2>A full stack web devloper based in Karslruhe, Germany.</h2>
     <h2>I like to create beautiful applications.</h2>
   </div>

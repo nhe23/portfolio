@@ -11,7 +11,8 @@ export const presets:Array<IPreset> = [
       primary: "#1e77fd",
       secondary: "#ff6584",
       background: "#ffffff",
-      textColorPrimary: "#ffffff"
+      textColorPrimary: "#ffffff",
+      light: "#e8eef3"
     }
   },
   {
