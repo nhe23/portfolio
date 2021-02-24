@@ -7,7 +7,7 @@
   export let required = true;
 </script>
 
-<div class="nes-field">
+<div>
   <label for={name}>{label}</label>
   <input {required} {type} id={name} {name} class="nes-input" class:is-dark={isDark}>
 </div>

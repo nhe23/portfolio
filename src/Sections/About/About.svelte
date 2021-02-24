@@ -54,7 +54,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center;
+    align-items: top;
     flex: 1;
   }
 </style>
@@ -79,14 +79,14 @@
     <Skill
       svg={BackendIllustration}
       header={'Backend'}
-      text={`Building fast and responsive sites is important.
-      This is why I use modern web technologies (HTML5, CSS3, React,
-        Svelte to name a few) to build my sites.`} />
+      text={`Secure and reliable backends are a necessity for providing 
+      a great user experience. I love building modern APIs using REST or GraphQL. 
+      My languages of choice for that are Go or TypeScript.`} />
     <Skill
       svg={CloudIllustration}
       header={'Cloud'}
-      text={`Building fast and responsive sites is important.
-        This is why I use modern web technologies (HTML5, CSS3, React,
-          Svelte to name a few) to build my sites.`} />
+      text={`Applications should be built with the underlying infrastructure in mind. 
+      I have multiple years of experience running my applications as CloudServices.
+      For that I have used Azure, Firebase and AWS.`} />
   </div>
 </div>
