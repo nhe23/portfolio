@@ -4,7 +4,7 @@
   import Nav from "./Nav/Nav.svelte";
   import Home from "./Home.svelte";
   import About from "./Sections/About/About.svelte";
-  import Projects from "./Sections/Projects.svelte";
+  import Projects from "./Sections/Projects/Projects.svelte";
   import Contact from "./Sections/Contact/Contact.svelte";
   import Section from "./Section.svelte";
   import Rocket from "./IllustrationComponents/Rocket.svelte";

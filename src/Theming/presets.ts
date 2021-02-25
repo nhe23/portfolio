@@ -9,6 +9,7 @@ export const presets:Array<IPreset> = [
     name: "light",
     colors: {
       primary: "#1e77fd",
+      primaryDark: "#1A64D4",
       secondary: "#ff6584",
       background: "#ffffff",
       textColorPrimary: "#ffffff",

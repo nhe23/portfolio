@@ -13,6 +13,14 @@
     <link rel="icon" type="image/png" href="/NHLogo.png" />
     <link rel="stylesheet" href="/global.css" />
     <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"
+    ></script>
+    <link
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet"
     />
@@ -23,15 +31,11 @@
 
   <body>
     <div id="remove-me" style="display: none">
-      <form
-        name="contact"
-        method="POST"
-        netlify
-        netlify-honeypot="bot-field"
-      >
+      <form name="contact" method="POST" netlify netlify-honeypot="bot-field">
         <p style="display: none">
-          <label>Don’t fill this out if you're human: 
-						<input name="bot-field"/></label>
+          <label
+            >Don’t fill this out if you're human: <input name="bot-field"
+          /></label>
         </p>
         <input type="text" name="Name" placeholder="Name" />
         <input type="email" name="Email" placeholder="Email" />
