@@ -1,21 +1,6 @@
-<div class="description">
-  <h1>What I've built</h1>
-</div>
-<div class="projects">
-  <div class="card"><div class="projectHeader">Annapol Onlineshop</div></div>
-  <div class="card">
-    <div class="projectHeader">AirPoll App</div>
-    <img src="./AirPoll.png" alt="Air Poll" />
-    <a href="https://google.de" target="_blank"> <button class="button" href="">
-      <span class="icon">
-        <i class="fab fa-github" />
-      </span>
-      <span>GitHub</span>
-    </button></a>
-  </div>
-  <div class="card">DarthCrawl</div>
-  <div class="card">Blobby Volly js</div>
-</div>
+<script>
+  import Project from "./Project.svelte";
+</script>
 
 <style>
   .description {
@@ -68,3 +53,37 @@
     flex: 1 1 300px;
   }
 </style>
+
+<div class="description">
+  <h1>What I've built</h1>
+</div>
+<div class="projects">
+  <Project
+    githubLink="https://github.com/devidvogel/annapol-onlineshop"
+    header="Annapol Onlineshop"
+    imgAlt="AirPoll"
+    imgSrc="./AirPoll.png"
+    projectLink="https://www.annapol.de/"
+  />
+  <Project
+    githubLink="https://github.com/nhe23/AirPoll"
+    header="AirPoll App"
+    imgAlt="AirPoll"
+    imgSrc="./AirPoll.png"
+    projectLink=""
+  />
+  <Project
+    githubLink="https://github.com/nhe23/DarthCrawl_Firebase"
+    header="DarthCrawl"
+    imgAlt="DarthCrawl"
+    imgSrc="./AirPoll.png"
+    projectLink="https://darth-crawl.firebaseapp.com/"
+  />
+  <Project
+    githubLink="https://github.com/nhe23/blobby_volley_js"
+    header="Blobby Volley JS"
+    imgAlt="DarthCrawl"
+    imgSrc="./AirPoll.png"
+    projectLink="https://master.d3m5xqwx8sphvy.amplifyapp.com/play"
+  />
+</div>

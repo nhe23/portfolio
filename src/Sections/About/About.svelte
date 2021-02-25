@@ -21,7 +21,7 @@
     align-items: center;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    background-color:var(--theme-light);
+    background-color: var(--theme-light);
   }
 
   @media only screen and (max-width: 720px) {
@@ -50,11 +50,18 @@
     object-fit: cover;
   }
 
-  .skills {
+  .skillsContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: top;
+    flex: 1;
+  }
+
+  .skills {
+    align-items: center;
+    display: flex;
+    width: 100%;
     flex: 1;
   }
 </style>
@@ -70,23 +77,28 @@
     <h2>I like to create beautiful applications.</h2>
   </div>
   <div class="skills">
-    <Skill
-      svg={FrontendIllustration}
-      header={'Frontend'}
-      text={`Building fast and responsive UIs is important.
+    <div class="skillsContainer">
+      <Skill
+        svg={FrontendIllustration}
+        header={"Frontend"}
+        text={`Building fast and responsive UIs is important.
       This is why I use modern web technologies (HTML5, CSS3, React &
-        Svelte to name a few) to build my sites.`} />
-    <Skill
-      svg={BackendIllustration}
-      header={'Backend'}
-      text={`Secure and reliable backends are a necessity for providing 
+        Svelte to name a few) to build my sites.`}
+      />
+      <Skill
+        svg={BackendIllustration}
+        header={"Backend"}
+        text={`Secure and reliable backends are a necessity for providing 
       a great user experience. I love building modern APIs using REST or GraphQL. 
-      My languages of choice for that are Go or TypeScript.`} />
-    <Skill
-      svg={CloudIllustration}
-      header={'Cloud'}
-      text={`Applications should be built with the underlying infrastructure in mind. 
+      My languages of choice for that are Go or TypeScript.`}
+      />
+      <Skill
+        svg={CloudIllustration}
+        header={"Cloud"}
+        text={`Applications should be built with the underlying infrastructure in mind. 
       I have multiple years of experience running my applications as CloudServices.
-      For that I have used Azure, Firebase and AWS.`} />
+      For that I have used Azure, Firebase and AWS.`}
+      />
+    </div>
   </div>
 </div>
