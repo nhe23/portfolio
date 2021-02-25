@@ -36,6 +36,10 @@
     align-self: center;
   }
 
+  .buttonLink{
+    align-self: center;
+  }
+
   img {
     margin-bottom: 20px;
     border-radius: 5px;
@@ -74,8 +78,6 @@
     {#if !showDetails} Show {:else} Hide {/if} Details
   </div>
 
-  
-
   {#if showDetails}
     <div class="text">
       AirPoll is an app for displaying air pollution data. It was build for the
@@ -83,11 +85,12 @@
     </div>
     <div class="text">Technologies used: Svelte, Go, GraphQL, MongoDB</div>
   {/if}
-
-  <button class="button" href={githubLink}>
-    <span class="icon">
-      <i class="fab fa-github" />
-    </span>
-    <span>GitHub</span>
-  </button>
+  <a class="buttonLink" href={githubLink} target="_blank"> 
+    <button class="button">
+      <span class="icon">
+        <i class="fab fa-github" />
+      </span>
+      <span>GitHub</span>
+    </button>
+  </a>
 </div>
