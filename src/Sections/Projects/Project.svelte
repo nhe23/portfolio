@@ -86,10 +86,9 @@
 
   {#if showDetails}
     <div class="text">
-      AirPoll is an app for displaying air pollution data. It was build for the first Accenture
-      Code.Now challenge which it won!
+      {description}
     </div>
-    <div class="text">Technologies used: Svelte, Go, GraphQL, MongoDB</div>
+    <div class="text">{technologies}</div>
   {/if}
   <a class="buttonLink" href={githubLink} target="_blank">
     <button class="button">
