@@ -10,7 +10,7 @@
 <style>
   .sectionContainer {
     background-color: var(--theme-primary);
-    flex:1;
+    flex: 1;
   }
   section {
     display: flex;
@@ -56,15 +56,13 @@
       0 20px 20px rgba(0, 0, 0, 0.15); */
     /* text-shadow: -4px 4px 0px #00e6e6, -8px 8px 0px #01cccc, */
     /* -12px 12px 0px #00bdbd; */
-    text-shadow: -4px 4px 0px #92b9f5, -8px 8px 0px #619bf1,
-      -12px 12px 0px #4e8ff1;
+    text-shadow: -4px 4px 0px #92b9f5, -8px 8px 0px #619bf1, -12px 12px 0px #4e8ff1;
     transform: translate(20px, 0px) scale(1.1);
   }
 
   @media only screen and (max-width: 720px) {
     .outstanding {
-      text-shadow: -4px 4px 0px #92b9f5, -8px 8px 0px #619bf1,
-        -12px 12px 0px #4e8ff1;
+      text-shadow: -4px 4px 0px #92b9f5, -8px 8px 0px #619bf1, -12px 12px 0px #4e8ff1;
       transform: translate(10px, 0px) scale(1.1);
     }
   }
@@ -81,6 +79,7 @@
     margin-top: 20px;
     align-self: center;
     font-size: 20px;
+    cursor: pointer;
   }
 
   a,
@@ -117,7 +116,8 @@
       height={triangleHeight}
       viewBox="0 0 {triangleWidth} {triangleHeight}"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path d="M0 0L{triangleWidth} {triangleHeight}H0V0Z" fill="#1A64D4" />
     </svg>
     <div class="illustrationContainer">

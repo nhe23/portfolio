@@ -3,7 +3,9 @@
   export let imgSrc: string;
   export let imgAlt: string;
   export let githubLink: string;
-  export let projectLink: string = "";
+  export let projectLink: string;
+  export let description: string = "";
+  export let technologies: string = "";
 
   let showDetails = false;
 </script>
@@ -36,7 +38,7 @@
     align-self: center;
   }
 
-  .buttonLink{
+  .buttonLink {
     align-self: center;
   }
 
@@ -56,9 +58,13 @@
 
 <div class="card">
   <div class="projectHeader">{header}</div>
-  <a href={projectLink} target="_blank">
+  {#if projectLink}
+    <a href={projectLink} target="_blank">
+      <img src={imgSrc} alt={imgAlt} />
+    </a>
+  {:else}
     <img src={imgSrc} alt={imgAlt} />
-  </a>
+  {/if}
 
   <div
     class="details is-flex"
@@ -80,12 +86,12 @@
 
   {#if showDetails}
     <div class="text">
-      AirPoll is an app for displaying air pollution data. It was build for the
-      first Accenture Code.Now challenge which it won!
+      AirPoll is an app for displaying air pollution data. It was build for the first Accenture
+      Code.Now challenge which it won!
     </div>
     <div class="text">Technologies used: Svelte, Go, GraphQL, MongoDB</div>
   {/if}
-  <a class="buttonLink" href={githubLink} target="_blank"> 
+  <a class="buttonLink" href={githubLink} target="_blank">
     <button class="button">
       <span class="icon">
         <i class="fab fa-github" />
