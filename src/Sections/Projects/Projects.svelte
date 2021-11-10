@@ -53,7 +53,7 @@
       imgAlt="Annpol"
       imgSrc="./Annapol.png"
       projectLink="https://www.annapol.de/"
-      description="Onlineshop for polish delicacies. Shop was build from scratch and is still at work. Page load time and small bundle size is a main focus in this project"
+      description="Onlineshop for polish delicacies. Shop was built from scratch and is still at work. Page load time and small bundle size is a main focus of this project"
       technologies="Technologies used: Svelte, Sveltekit, Firebase"
     />
     <Project
@@ -62,7 +62,7 @@
       imgAlt="AirPoll"
       imgSrc="./AirPoll.png"
       projectLink=""
-      description="AirPoll is an app for displaying air pollution data. It was build for the first Accenture
+      description="AirPoll is an app for displaying air pollution data. It was built for the first Accenture
       Code.Now challenge which it won!"
       technologies="Technologies used: Svelte, Go, GraphQL, MongoDB"
     />

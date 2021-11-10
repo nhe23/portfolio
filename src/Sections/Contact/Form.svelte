@@ -30,6 +30,7 @@
     padding: 5px 35px;
     width: fit-content;
     margin-top: 20px;
+    cursor: pointer;
   }
 
   input,
@@ -59,8 +60,10 @@
     <form name="contact" method="POST">
       <input type="hidden" name="form-name" value="contact" />
       <p style="display: none">
-        <label>Don’t fill this out if you're human:
-          <input name="bot-field"/></label>
+        <label
+          >Don’t fill this out if you're human:
+          <input name="bot-field" /></label
+        >
       </p>
       <input type="text" name="Name" placeholder="Name" />
       <input type="email" name="Email" placeholder="Email" />
